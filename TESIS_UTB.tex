@@ -1,0 +1,84 @@
+\documentclass[a4paper, openany, 12pt]{book}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{pdfpages}
+\usepackage{etoolbox}
+\usepackage{multirow}
+\usepackage{vmargin}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage[utf8]{inputenc}
+\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{appendix}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{tocloft}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{lscape}
+\usepackage{color}
+\usepackage{hhline}
+\usepackage{longtable}
+\usepackage{wrapfig} %preámbulo
+\floatstyle{}
+\usepackage{titlesec}
+\usepackage[ backend=biber, style=numeric, citestyle=ieee,sorting=none]{biblatex}
+
+\addbibresource{references.bib}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%-estilo de pagina---------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\emph\leftmark}
+\fancyhead[RE]{\emph\rightmark}
+\fancyfoot[C]{\thepage}
+%=================---definir estilo y color de los nombres de capitulos y secciones
+\definecolor{AzulClaro}{rgb}{0.2,0.5,0.7}
+\definecolor{Veeerde}{rgb}{0.0, 0.42, 0.24}
+%\newfontfamily{\coral}{TeX Gyre Chorus}
+%\newfontfamily{\coral}{roman}
+%=======--definir cuadro de texto
+\usepackage{tcolorbox}
+%\tcbuselibrary{listingsutf8} % o listings o minted
+\tcbuselibrary{listings}
+%=============================
+\titleformat{\chapter}[frame]
+{\LARGE\coral\bfseries\color{AzulClaro}}{\filright\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titleformat*{\section}{\Large\bfseries\sffamily\color{Veeerde}}
+\titleformat*{\section}{\Large\bfseries\color{Veeerde}}
+
+
+%------INICIO DOCUMENTO-------------------------
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\thispagestyle{empty}
+%--------------------------
+\input{contenido}
+%----------------------------
+\input{introduccion}
+%----------------------
+\input{problema}
+%-----------------------
+\input{marcoteorico}
+%----------------------
+\input{metodo}
+%-----------------------
+\input{resultados1}
+%-----------------------
+\input{resultados2}
+%----------------------
+\input{conclusion}
+%---------------------- 
+\printbibliography
+%---------------------
+\input{anexos}
+\end{document}

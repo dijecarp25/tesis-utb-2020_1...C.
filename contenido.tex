@@ -1,0 +1,130 @@
+%---portada 1-----------------------------------
+\renewcommand{\tablename}{Tabla}
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[width=0.5 \textwidth]{imagenes/logoUTB_BW.jpg} \\
+\vspace{1.0cm}
+{\large \textbf{Facultad de Ciencias Básicas} \\
+\vspace{0.15cm}
+{\large \textbf{Maestría en Estadística Aplicada}}
+
+\vspace{2.5cm}
+{\Large\color{AzulClaro} \textbf{Reconocimiento de placas vehiculares usando redes neuronales convolucionales}
+}\\
+\vspace{2.5cm}
+
+Autor \\
+\vspace{0.70cm}
+{\large \textbf{Didier Eloy Arroyo Pérez}
+}\\
+
+
+\vspace{4.0cm}
+Cartagena de Indias\\
+\vspace{0.25cm}
+2020
+}
+\end{center}
+\newpage
+%-----portada 2-----------------
+\begin{center}
+\includegraphics[width=0.5 \textwidth]{imagenes/logoUTB_BW.jpg} \\
+\vspace{1.0cm}
+{\large \textbf{Facultad de Ciencias Básicas} \\
+\vspace{0.15cm}
+{\large \textbf{Maestría en Estadística Aplicada}}
+
+\vspace{2.5cm}
+{\Large\color{AzulClaro} \textbf{Reconocimiento de placas vehiculares usando redes neuronales convolucionales}
+}\\
+\vspace{1.5cm}
+
+Autor \\
+\vspace{0.25cm}
+{\large \textbf{Didier Eloy Arroyo Pérez}
+}\\
+\vspace{2.0cm}
+Director: Alberto Patiño Vanegas, Ph.D\\
+\vspace{0.25cm}
+Co-director: Alberto Patiño Saucedo, Ph.D (C)\\
+
+\vspace{3.0cm}
+Cartagena de Indias\\
+\vspace{0.25cm}
+2020
+}
+\end{center}
+\newpage
+\thispagestyle{empty}
+%---dedicartoria---------------------
+\newpage
+\thispagestyle{empty}
+\chapter*{Dedicatoria}
+\addcontentsline{toc}{chapter}{Dedicatoria}
+\markboth{Dedicatoria}{Dedicatoria}
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\begin{center}
+    \vspace*{\fill}
+   \noindent
+	\textbf{Para mi esposa, Jessica y mis hijos, Guadalupe y Gael}.\\
+   \textit{Con mucho amor y esfuerzo para su bienestar y orgullo.} 
+   \vspace*{\fill}
+\end{center}
+   
+\chapter*{Agradecimientos}
+\addcontentsline{toc}{chapter}{Agradecimientos}
+\markboth{Agradecimientos}{Agradecimientos}
+\pagenumbering{Roman}
+\setcounter{page}{2}
+
+  \Item A Dios que siempre me ha dado fortaleza para seguir adelante.\newline
+
+  \Item A la Universidad Tecnológica de Bolívar por abrirme sus puertas y así mejorar mi nivel profesional.\newline
+  
+  \Item A mi director, Alberto Patiño Vanegas, por su constante apoyo y recomendaciones.\newline
+  
+  \Item A mi codirector de tesis, Alberto Patiño Saucedo, por brindarme su apoyo, tiempo y guía.\newline
+  
+  \Item A mis colegas de la Maestría en Estadística Aplicada por acompañarme en esta etapa de formación.\newline
+  
+  \Item A mis padres María Nevid Pérez Herrera y Eloy Alfredo Arroyo Márquez y mis hermanas por todo el cariño, amor y apoyo que me han brindado toda mi vida.\newline
+  
+  \Item A mi esposa e hijos por su apoyo incondicional en toda esta etapa.\newline
+  
+  \Item A todas aquellas personas que de alguna manera me acompañaron en esta ruta de nuevo conocimiento y formación académica.\newline
+  
+%----resumen------------------------------
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\markboth{Resumen}{Resumen}
+\pagenumbering{Roman}
+\setcounter{page}{3}
+ En este trabajo se diseñó y elaboró un sistema experto de visión artificial para el reconocimiento automático de placas de automóviles en Colombia. El sistema usa una imagen capturada con una cámara convencional en el rango visible del espectro electromagnético y técnicas de aprendizaje profundo. 
+ Para el entrenamiento, nosotros hemos construido inicialmente una base de datos con imágenes de caracteres segmentados de placas colombianas más imágenes de caracteres depurados de la base de datos pública Chars74k. Esta base de datos se usó para entrenar una Red Neuronal Convolucional creada desde cero, lográndose un porcentaje de clasificación correcta por caracter del 99,49\%; pero al momento de reconocer toda la placa (los seis caracteres), el rendimiento disminuye al 84\% en el conjunto de prueba. Teniendo en cuenta que, la aplicación de estos sistemas exige un sistema experto de reconocimiento de placas, se decidió construir otra base de datos con las coordenadas de caracteres de placas colombianas obtenidas usando Cuadros Delimitadores (Bonding Boxing). Con esta segunda base de datos, se usó un modelo pre-entrenado de TensorFlow, basado en una Red Neuronal Convolucional mucho mas Rápida con propuesta de Regiones (Faster R-CNN). A pesar de entrenarse con una base de datos no equilibrada y con poca variabilidad se logró un mejor rendimiento que usando la red neuronal convolucional construida desde cero; lo que permite concluir que éste tipo de red promete mejores resultados si se usa una base de datos más equilibrada y con mucha variabilidad. 
+ 
+\newpage
+%-----abstract-------------------------
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\markboth{Resumen}{Abstract}
+\pagenumbering{Roman}
+\setcounter{page}{3}
+In this work, an expert artificial vision system for the automatic recognition of car license plates in Colombia was designed and elaborated. The system uses an image captured with a conventional camera in the visible range of the electromagnetic spectrum and deep learning techniques.
+ For training, we have initially built a database with images of segmented characters from Colombian plates plus images of depurate characters from the public Chars74k database. This database was used to train a Convolutional Neural Network created from scratch, achieving a percentage of correct classification per character of 99.49\%. But, at the moment of reconizing whole plate (all six characters), the performance drops to 84\% in the test set.
+Taking into account that the application of these systems requires an expert plate recognition system, another database was decided to build with the coordinates of characters of Colombian plates obtained using Bounding Boxes. With this second database, a pre-trained TensorFlow model was used, based on a much Faster Convolutional Neural Network with proposed Regions (Faster R-CNN). Despite training with an unbalanced database and with little variability, better performance was achieved than using the convolutional neural network built from scratch; which allows us to conclude that this type of network promises better results if a more balanced database with a lot of variability is used.
+
+\newpage
+
+%------tabla de contenido----------------
+\thispagestyle{empty}
+\tableofcontents
+%----listya de figuras
+\clearpage
+\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoffigures
+%----lista de tablas
+\clearpage
+\addcontentsline{toc}{chapter}{Lista de Tablas}
+\listoftables

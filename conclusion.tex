@@ -1,0 +1,31 @@
+\chapter{Conclusiones y recomendaciones}
+
+\section*{Conclusiones generales}
+
+En este trabajo se diseño un sistema de visión artificial para el reconocimiento de placas colombianas de vehículos. El sistema reconoce la placa a partir de una imagen capturada con una cámara convencional y utiliza para su reconocimiento una RNC previamente entrenada. 
+
+Para el reconocimiento se ensayaron dos modelos: Un primer modelo fue una RNC construida desde cero, y para su entrenamiento hemos construido una base de datos a partir de imágenes de caracteres segmentados desde placas colombianas y de imágenes de caracteres seleccionados desde la base de datos \textit{Chars74k}. Un segundo modelo utiliza detección de objetos a partir del modelo pre-entrenado Faster R-CNN y para su entrenamiento hemos construido una base de datos etiquetando caracteres con cuadros delimitadores.   
+
+Las conclusiones de esta investigación se derivadan a partir de las preguntas de investigación planteadas y a los objetivos propuestos se resumen a continuación:
+
+En este trabajo al agregar imagenes de caracteres de la base de datos \textit{Chars74k} a una base de datos construida a partir de placa colombianas, el rendimiento del modelo 1 mejora significativamente pasando de un 93\% a un 99,49\%. Aunque las imagenes agregadas no corresponden a caracteres de placas de automóviles, si tienen caracteristicas similares que permitieron aumentar el rendimiento. Podemos decir, que una red neuronal convolucional es un sistema realmente capaz de “aprender” las características de los distintos dígitos y letras de las placas colombianas, sin necesidad de complejos mecanismos de extracción de atributos. Solamente se necesita una buena base de datos para su entrenamiento.
+
+El sistema de reconocimiento diseñado usando el Modelo 1, consta de dos etapas: una etapa donde se segmentan los caracteres de la placa a ser reconocidos y una segunda donde se realiza el reconocimiento usando el Modelo 1 previamente entrenado. Con este diseño, las fallas del sistema en el reconocimiento, puede deberse ya sea por la etapa de segmentación o por el rendimiento de la RNC. 
+
+El sistema de reconocimiento diseñado usando el Modelo 2, presentó un rendimiento en el reconocimiento de placas en el conjunto de prueba usado, del 99,8\% considerando un umbral de acierto del 60\%.  
+
+En este trabajo se logró evidenciar que las técnicas de detección de objetos junto con transferencia de aprendizaje, puede ser una excelente alternativa para el reconocimiento de placas. La técnica de detección de objetos es mucho más sencilla y no se necesita una etapa de segmentación previa. Mientras que, la transferencia de aprendizaje es muy útil cuando no se cuenta con una amplia base de datos. Solamente hay que tener en cuenta que la poca base de datos con que se cuente sea lo suficientemente equilibrada. Además, este tipo de técnica puede detectar cualquier cantidad de objetos dentro de una imagen. Así, los sistemas de reconocimiento de placas basados en esta técnica son más generales, de tal forma que pueden ser usados sin importar el número de caracteres y el formato de una placa determinada.
+
+\section*{Recomendaciones}
+%Se debe disponer de un conjunto de entrenamiento suficientemente representativo del problema para obtener resultados satisfactorios con una red neuronal convolucional.
+
+%Este tipo de trabajos con inteligencia artificial requiere de mucha documentación y estudio, por lo que siempre encontraremos diferentes alternativas de diseño y programación para el tratamiento de datos, lo que nos permite elegir lo ideal para nuestros entrenamientos.
+
+Para mejorar el rendimiento del sistema de reconocimiento de placas colombianas, implementado en este trabajo, se recomienda:
+
+Mejorar la etapa de segmentación si se desea implementar un sistema de reconocimiento de placas usando una RNC, tal como el usado en el Modelo 1.
+
+Si se desea usar la técnica de detección de objetos, se debe ampliar la base de datos de entrenamiento,  recopilando imágenes en diferentes lugares de Colombia, para lograr tener una base de datos mejor equilibrada; luego complementarla mediante el uso de técnicas como “data augmentation”. Así se mejoraría sin duda el porcentaje de aciertos del sistema.
+
+Ensayar con otras configuraciones de red con distintos parámetros, número de capas, funciones de activación o algoritmo de aprendizaje. Además, ensayar con otros modelos pre-entrenados.
+    
